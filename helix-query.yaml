@@ -2,8 +2,8 @@ version: 1
 indices:
   channels:
     include:
-      - '/franklin/screens/caesars/**'
-    target: '/franklin/screens/caesars/channels'
+      - '/screens/caesars/**'
+    target: '/screens/caesars/channels'
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -18,8 +18,8 @@ indices:
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
   channel-manifest:
     include:
-      - '/franklin/screens/caesars/**'
-    target: '/franklin/screens/caesars/woody/manifest'
+      - '/screens/caesars/**'
+    target: '/screens/caesars/woody/manifest'
     properties:
       title:
         select: head > meta[property="og:title"]
