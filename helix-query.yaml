@@ -2,7 +2,7 @@ version: 1
 indices:
   channels:
     include:
-      - '/screens/caesars/**'
+      - '/screens/caesars/menus/restaurants/caesars_cafe/**'
     target: '/screens/caesars/channels'
     properties:
       title:
