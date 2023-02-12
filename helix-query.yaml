@@ -2,8 +2,8 @@ version: 1
 indices:
   channels:
     include:
-      - '/screens/caesars/**'
-    target: '/screens/caesars/channels'
+      - '/screens/caesars/menus/restaurants/caesars_cafe/**'
+    target: '/screens/channels'
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -16,40 +16,3 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
-  channel-manifest:
-    include:
-      - '/screens/caesars/**'
-    target: '/screens/caesars/woody/manifest'
-    properties:
-      title:
-        select: head > meta[property="og:title"]
-        value: |
-          attribute(el, 'content')
-      lastModified:
-        select: none
-        value: |
-          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
-      scripts:
-        select: head > script[src]
-        values: |
-          attribute(el, 'src')
-      styles:
-        select: head > link[rel="stylesheet"]
-        values: |
-          attribute(el, 'href')
-      assets:
-        select: head > link[rel*="preload"]
-        values: |
-          attribute(el, 'href')
-      blocks:
-        select: body div[class]
-        values: |
-          attribute(el, 'className')
-      inline-images:
-        select: body img
-        values: |
-          attribute(el, 'src')
-      media-blocks:
-        select: body div:is([class="embed"],[class="image"],[class="video"])
-        values: |
-          textContent(el)
